@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="Canvas" />
+
+    <link rel="stylesheet" href="public/main.css" />
+
+    <title>Rest Countries API - Vite App</title>
+  </head>
+  <body>
+    <!-- First component -->
+    <header class="header">
+      <nav class="navbar container">
+        <h1>Where in the world?</h1>
+
+        <div class="color-mode">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            title="Toggles light & dark"
+            aria-label="auto"
+            aria-live="polite"
+          >
+            <svg
+              class="sun-and-moon"
+              aria-hidden="true"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="sun"
+                cx="12"
+                cy="12"
+                r="6"
+                mask="url(#moon-mask)"
+                fill="currentColor"
+              />
+              <g class="sun-beams" stroke="currentColor">
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </g>
+              <mask class="moon" id="moon-mask">
+                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                <circle cx="24" cy="10" r="6" fill="black" />
+              </mask>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- END of First component -->
+
+    <!-- Second component -->
+    <div class="search-country">
+      <section class="search container">
+        <div class="search_section">
+          <input
+            type="text"
+            placeholder="Search for a country..."
+            class="search_input"
+            name="search"
+          />
+          <div class="search_results" style="display: none"></div>
+        </div>
+
+        <!-- FILTER DROPDOWN -->
+        <div class="select-box">
+          <div class="options-container">
+            <div class="option">
+              <input
+                type="radio"
+                class="radio continent"
+                id="africa"
+                name="category"
+              />
+              <label for="africa">Africa</label>
+            </div>
+
+            <div class="option">
+              <input
+                type="radio"
+                class="radio continent"
+                id="americas"
+                name="category"
+              />
+              <label for="americas">America</label>
+            </div>
+
+            <div class="option">
+              <input
+                type="radio"
+                class="radio continent"
+                id="asia"
+                name="category"
+              />
+              <label for="asia">Asia</label>
+            </div>
+
+            <div class="option">
+              <input
+                type="radio"
+                class="radio continent"
+                id="europe"
+                name="category"
+              />
+              <label for="europe">Europe</label>
+            </div>
+
+            <div class="option">
+              <input
+                type="radio"
+                class="radio continent"
+                id="oceania"
+                name="category"
+              />
+              <label for="oceania">Oceania</label>
+            </div>
+          </div>
+
+          <div class="selected">Filter by Region</div>
+        </div>
+      </section>
+    </div>
+    <!-- END FILTER DROPDOWN -->
+    <!-- END of Second component -->
+
+    <!-- Third component -->
+    <main class="container_countries">
+      <div class="countries container"></div>
+    </main>
+    <!-- END of Third component -->
+
+    <!-- SCRIPTS -->
+    <script type="module" src="public/theme-toggle.js"></script>
+
+    <!-- FROM VITE -->
+    <script type="module" src="/main.js"></script>
+    <!-- END SCRIPTS -->
+  </body>
+</html>

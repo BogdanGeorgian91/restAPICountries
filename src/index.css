@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+@import "base/variables.css";
+@import "components/theme-toggle.css";
+@import "components/sun-and-moon.css";
+@import "components/navbar.css";
+@import "components/search.css";
+@import "components/containerCountries.css";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Nunito Sans", sans-serif;
+
+  /* &[data-theme="dark"] {
+    color-scheme: dark;
+
+    @supports not (color-scheme: dark) {
+      background: #111;
+    }
+  } */
+}
+
+body {
+  --background: #fafafa;
+  --text-color: #111517;
+  --element-color:hsl(
+  0,
+  0%,
+  100%
+);
+  --hover-filter: #eee;
+
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+
+  @nest [data-theme="dark"] & {
+    --background: hsl(207, 26%, 17%);
+    --text-color: hsl(0, 0%, 100%);
+    --element-color: hsl(209, 23%, 22%);
+    --hover-filter:#414b57;
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: 4rem;
+  padding-right: 5rem;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* WHY DON'T THEY WORK ?? */
+@media (max-width: var(--laptop-max)) {
+  .container {
+    max-width: var(--container-laptop);
+  }
+}
+
+@media (max-width: var(--tablet-max)) {
+  .container {
+    max-width: var(--container-tablet);
+  }
+}
+
+@media (max-width: var(--phone-max)) {
+  .container {
+    max-width: 100%;
+  }
+}

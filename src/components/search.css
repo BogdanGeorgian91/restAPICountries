@@ -1,0 +1,184 @@
+/* SEARCH COMPONENT */
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 6rem 0;
+  position: relative;
+}
+
+@media (max-width: 677px) {
+  .search {
+    display: block;
+  }
+  .search_section {
+    margin-bottom: 3rem;
+  }
+  .select-box {
+    left: 4rem;
+  }
+  
+}
+
+.search-country {
+  display: block;
+}
+
+.search-country-disabled {
+  display: none;
+}
+
+.search_input {
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 1px;
+  background-color: var(--element-color);
+
+  padding: 2rem 14rem 1.4rem 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  display: flex;
+}
+
+.search_input:hover {
+  cursor: pointer;
+  outline: green solid;
+}
+
+/* sa inlocuiesc SVG ul si sa l stilizez sa si schimbe culoarea la theme switcher */
+.search_tool {
+  position: absolute;
+  top: 44%;
+  left: 1%;
+  width: 2.5rem;
+}
+
+.search_section {
+  position: relative;
+}
+
+.search_section .search_results {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  position: absolute;
+  top: 100%;
+  background-color: var(--dark-background);
+  width: 100%;
+}
+.search_section .search_results .search_suggestion {
+  color: white;
+  display: block;
+  padding: 0.75em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+.search_section .search_results .search_suggestion:hover {
+  background-color: #efefef;
+  color: #04b4e1;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+.search_section .search_results .search_suggestion.search_suggestion--active {
+  /* background-color: #efefef;
+  color: #04b4e1; */
+}
+
+/* ######################################### */
+/* FILTER COMPONENT */
+.select-box {
+  position: absolute;
+  right: 5rem;
+
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: 1.4rem;
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+}
+
+.select-box .options-container {
+    background-color: var(--element-color);
+
+
+  color: var(--text-color);
+
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+}
+
+.selected {
+  /* align-self: start;
+  justify-self: center; */
+
+  padding: 1.7rem 0 1.7rem 1rem;
+  color: var(--text-color);
+    background-color: var(--element-color);
+
+  border-radius: 8px;
+  margin-bottom: 8px;
+  position: relative;
+
+  order: 0;
+}
+
+.selected::after {
+  content: "";
+  background: url("/img/arrow-down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  height: 100%;
+  width: 3.3rem;
+  right: 1rem;
+  top: 0.7rem;
+
+  transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+  max-height: 35rem;
+  opacity: 1;
+}
+
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -6px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .option,
+.selected {
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.select-box .option:hover {
+  background: var(--hover-filter);
+}
+
+.select-box label {
+  cursor: pointer;
+}
+
+.select-box .option .radio {
+  display: none;
+}

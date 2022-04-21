@@ -1,0 +1,39 @@
+:root {
+  --dark-element: #2b3945;   /* Dark Blue (Dark Mode Elements) */
+  --dark-background: #202c37;   /* Very Dark Blue (Dark Mode Background) */
+  --dark-text-light-elements: #ffffff;   /* White (Dark Mode Text & Light Mode Elements) */
+ 
+  --light-text: 	#111517;    /* Very Dark Blue (Light Mode Text) */
+  --light-input: 	#858585;    /* Dark Gray (Light Mode Input) */
+  --light-background: 	#fafafa;   /* Very Light Gray (Light Mode Background) */
+
+  --container: 1600px;
+  --container-laptop: 1000px;
+  --container-tablet: 750px;
+
+  --laptop-max: 1367px;
+  --tablet-max: 1024px;
+  --phone-max: 800px;
+  --phone-small-max: 320px;
+
+  --timing: .3s;
+}
+
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+
+/* ###################################### OLD CODE #################################### */
+/* ($(dark-element)): hsl(209, 23%, 22%); // Dark Blue (Dark Mode Elements) #2b3945;
+
+$(dark-background): hsl(207, 26%, 17%); // Very Dark Blue (Dark Mode Background) #202c37;
+
+$(dark-text-light-elements): hsl(
+  0,
+  0%,
+  100%
+); // White (Dark Mode Text & Light Mode Elements)  #ffffff;
+
+$(light-text): hsl(200, 15%, 8%); // Very Dark Blue (Light Mode Text)  #111517;
+
+$(light-input): hsl(0, 0%, 52%); // Dark Gray (Light Mode Input)   #858585;
+
+$(light-background): hsl(0, 0%, 98%); // Very Light Gray (Light Mode Background) #fafafa; */
